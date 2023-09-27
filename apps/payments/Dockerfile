@@ -4,10 +4,15 @@ WORKDIR /usr/src/app
 
 COPY package.json ./
 COPY yarn.lock ./
+COPY tsconfig.json tsconfig.json
+COPY nest-cli.json nest-cli.json
 
 RUN yarn install
 
-COPY . .
+COPY apps/payments ./apps/payments
+COPY libs ./libs
+
+RUN cd apps/payments && yarn install
 
 FROM builder as development
 
@@ -15,7 +20,7 @@ CMD ["yarn", "start:dev", "payments"]
 
 FROM builder as prod_builder
 
-RUN yarn build
+RUN yarn build payments
 
 FROM node:alpine as production
 

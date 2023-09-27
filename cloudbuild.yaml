@@ -1,0 +1,64 @@
+steps:
+  # Build and push the auth images
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build', 
+      '-t',
+      'asia-southeast1-docker.pkg.dev/reservations-400309/auth/production:latest', 
+      '-f', 
+      'apps/auth/Dockerfile', 
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 
+      'asia-southeast1-docker.pkg.dev/reservations-400309/auth/production:latest'
+    ]
+  
+  # Build and push the notifications images
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build', 
+      '-t',
+      'asia-southeast1-docker.pkg.dev/reservations-400309/notifications/production:latest', 
+      '-f', 
+      'apps/notifications/Dockerfile', 
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 
+      'asia-southeast1-docker.pkg.dev/reservations-400309/notifications/production:latest'
+    ]
+  
+  # Build and push the payments images
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build', 
+      '-t',
+      'asia-southeast1-docker.pkg.dev/reservations-400309/payments/production:latest', 
+      '-f', 
+      'apps/payments/Dockerfile', 
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 
+      'asia-southeast1-docker.pkg.dev/reservations-400309/payments/production:latest'
+    ]
+  
+  # Build and push the reservations images
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build', 
+      '-t',
+      'asia-southeast1-docker.pkg.dev/reservations-400309/reservations/production:latest', 
+      '-f', 
+      'apps/reservations/Dockerfile', 
+      '.'
+    ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push', 
+      'asia-southeast1-docker.pkg.dev/reservations-400309/reservations/production:latest'
+    ]

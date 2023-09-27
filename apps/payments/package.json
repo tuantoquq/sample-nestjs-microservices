@@ -1,0 +1,17 @@
+{
+  "name": "payments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tuantoquq",
+  "license": "ISC",
+  "dependencies": {
+    "stripe": "^13.7.0"
+  }
+}
