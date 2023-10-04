@@ -20,9 +20,6 @@ services:
       - ./apps/reservations/.env
     ports:
       - 3000:3000
-    # volumes:
-    #   - .:/usr/src/app
-    #   - /usr/src/app/node_modules
     depends_on:
       - mongo
     networks:
@@ -38,9 +35,6 @@ services:
       - ./apps/auth/.env
     ports:
       - 3001:3001
-    # volumes:
-    #   - .:/usr/src/app
-    #   - /usr/src/app/node_modules
     depends_on:
       - mongo
     networks:
@@ -56,9 +50,6 @@ services:
       - ./apps/payments/.env
     ports:
       - 3003:3003
-    # volumes:
-    #   - .:/usr/src/app
-    #   - /usr/src/app/node_modules
     networks:
       - mcr_nest
   
@@ -72,9 +63,6 @@ services:
       - ./apps/notifications/.env
     ports:
       - 3004:3004
-    # volumes:
-    #   - .:/usr/src/app
-    #   - /usr/src/app/node_modules
     networks:
       - mcr_nest
   
