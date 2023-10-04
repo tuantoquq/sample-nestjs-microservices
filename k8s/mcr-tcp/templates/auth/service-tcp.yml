@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-tcp
+  labels:
+    app: auth-tcp
+spec:
+  ports:
+    - port: 3002
+      name: 'tcp'
+      protocol: TCP
+      targetPort: 3002
+  selector:
+    app: auth-tcp
+  type: ClusterIP

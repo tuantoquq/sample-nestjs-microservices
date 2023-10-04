@@ -16,4 +16,20 @@ spec:
     spec:
       containers:
         - image: asia-southeast1-docker.pkg.dev/reservations-400309/auth/production:latest
-          name: production
+          name: auth
+          env:
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: connectionString
+            - name: JWT_SECRET
+              value: "asdsuiq93042342k3kasodas-394ikaskdasdas-zxczxlciaasdasd"
+            - name: JWT_EXPIRATION_TIME
+              value: "3600"
+            - name: HTTP_PORT
+              value: "3001"
+            - name: TCP_PORT
+              value: "3002"
+          ports:
+            - containerPort: 3001
