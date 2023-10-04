@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: auth-http
   labels:
-    app: auth-http
+    app: auth
 spec:
   ports:
     - port: 3001
@@ -11,5 +11,5 @@ spec:
       protocol: TCP
       targetPort: 3001
   selector:
-    app: auth-http
+    app: auth
   type: NodePort

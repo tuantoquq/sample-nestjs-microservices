@@ -33,3 +33,4 @@ spec:
               value: "3002"
           ports:
             - containerPort: 3001
+            - containerPort: 3002
