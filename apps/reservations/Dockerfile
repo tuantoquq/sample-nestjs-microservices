@@ -28,10 +28,7 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
-COPY yarn.lock ./
-
-RUN yarn install --production
+COPY --from=prod_builder /usr/src/app/node_modules ./node_modules
 
 COPY --from=prod_builder /usr/src/app/dist ./dist
 

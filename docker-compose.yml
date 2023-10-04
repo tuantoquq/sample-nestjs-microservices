@@ -14,15 +14,15 @@ services:
     build: 
       context: .
       dockerfile: ./apps/reservations/Dockerfile
-      target: development
+      target: production
     restart: always
     env_file:
       - ./apps/reservations/.env
     ports:
       - 3000:3000
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+    # volumes:
+    #   - .:/usr/src/app
+    #   - /usr/src/app/node_modules
     depends_on:
       - mongo
     networks:
@@ -32,15 +32,15 @@ services:
     build: 
       context: .
       dockerfile: ./apps/auth/Dockerfile
-      target: development
+      target: production
     restart: always
     env_file:
       - ./apps/auth/.env
     ports:
       - 3001:3001
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+    # volumes:
+    #   - .:/usr/src/app
+    #   - /usr/src/app/node_modules
     depends_on:
       - mongo
     networks:
@@ -50,15 +50,15 @@ services:
     build: 
       context: .
       dockerfile: ./apps/payments/Dockerfile
-      target: development
+      target: production
     restart: always
     env_file:
       - ./apps/payments/.env
     ports:
       - 3003:3003
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+    # volumes:
+    #   - .:/usr/src/app
+    #   - /usr/src/app/node_modules
     networks:
       - mcr_nest
   
@@ -66,15 +66,15 @@ services:
     build: 
       context: .
       dockerfile: ./apps/notifications/Dockerfile
-      target: development
+      target: production
     restart: always
     env_file:
       - ./apps/notifications/.env
     ports:
       - 3004:3004
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+    # volumes:
+    #   - .:/usr/src/app
+    #   - /usr/src/app/node_modules
     networks:
       - mcr_nest
   
