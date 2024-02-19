@@ -16,10 +16,12 @@ services:
       dockerfile: ./apps/reservations/Dockerfile
       target: development
     restart: always
+    command: yarn run start:debug reservations
     env_file:
       - ./apps/reservations/.env
     ports:
       - 3000:3000
+      - 9229:9229
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-REGISTRY_BASE_PATH=asia-southeast1-docker.pkg.dev/reservations-400309/
+REGISTRY_BASE_PATH=tuantoquq/
 
 if [ "${1}" = "--env" ]; then
   if [ "${2}" = "dev" ]; then

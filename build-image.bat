@@ -1,6 +1,6 @@
 @echo off
 
-set REGISTRY_BASE_PATH=asia-southeast1-docker.pkg.dev/reservations-400309/
+set REGISTRY_BASE_PATH=tuantoquq/
 
 if "%1" == "--env" (
   if "%2" == "dev" (
