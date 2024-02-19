@@ -20,10 +20,10 @@ async function bootstrap() {
 
   /* Microservices */
   app.connectMicroservice({
-    transport: Transport.TCP,
+    transport: Transport.RMQ,
     options: {
-      host: '0.0.0.0',
-      port: configService.get('TCP_PORT'),
+      urls: [configService.get('RABBITMQ_URI')],
+      queue: 'auth',
     },
   });
 

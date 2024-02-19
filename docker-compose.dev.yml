@@ -80,6 +80,14 @@ services:
     networks:
       - mcr_nest
   
+  rabbitmq:
+    image: rabbitmq
+    restart: always
+    ports:
+      - 5672:5672
+    networks:
+      - mcr_nest
+  
 networks:
   mcr_nest:
     driver: bridge
